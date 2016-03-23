@@ -5,12 +5,12 @@ provApp.config(function($routeProvider) {
 
 	// route for the home page.
 	.when('/', {
-		templateUrl: '/pages/home.html',
+		templateUrl: 'pages/home.html',
 		controller: 'ProvincesController'
 	})
 
 	.when('/province/:provinceCode', {
-		templateUrl: '/pages/province.html',
+		templateUrl: 'pages/province.html',
 		controller: 'provinceController'
 	})
 })
@@ -20,9 +20,6 @@ provApp.controller('ProvincesController', function($scope, $http, filterFilter, 
        .then(function(res){
           $scope.listedProvinces = res.data.provinces;
           $scope.provinceData = $scope.listedProvinces;  
-          console.log($scope.provinceData);
-          // $scope.provinceData.provincePopulation = parseFloat($scope.provinceData.provincePopulation)
-          // console.log($scope.provinceData.provincePopulation);
           $scope.reverse = true;
           $scope.column = 'provincePopulation';
 
